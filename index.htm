@@ -61,18 +61,19 @@
 </head>
 <body>
     <header>
-        <h1>나의 포트폴리오</h1>
+        <h1>도유를 위해 준비한 생일선물</h1>
     </header>
     <nav>
         <ul>
             <li><a href="#about">소개</a></li>
             <li><a href="#projects">프로젝트</a></li>
             <li><a href="#contact">연락처</a></li>
+            <li><a href="#letters">편지</a></li> <!-- 편지 섹션으로 이동하는 링크 추가 -->
         </ul>
     </nav>
     <section id="about">
         <h2>소개</h2>
-        <p>안녕하세요! 저는 웹 개발자로서 다양한 경험을 쌓고 있는 개발자입니다. 주로 HTML, CSS, JavaScript를 사용하여 웹사이트를 구축하고, 백엔드 개발을 위해 Python과 Node.js를 활용합니다.</p>
+        <p>...</p>
     </section>
     <section id="projects">
         <h2>프로젝트</h2>
@@ -96,9 +97,50 @@
         <p>이메일: jyjy0372@naver.com</p>
         <p>전화번호: 010-2672-5968</p>
     </section>
+    <section id="letters">
+        <h2>편지</h2>
+        <form id="letterForm">
+            <input type="text" id="letterTitle" placeholder="편지 제목을 입력하세요..."><br> <!-- 편지 제목 입력 필드 -->
+            <textarea id="letterContent" rows="5" cols="50" placeholder="편지 내용을 입력하세요..."></textarea>
+            <br>
+            <button type="submit">편지 올리기</button>
+        </form>
+        <div id="letterList"></div> <!-- 편지를 표시할 영역 -->
+    </section>
     <footer></footer>
-</body>    
-    </html>
 
+    <script>
+        // 편지 올리기 폼 제출 시 실행될 함수
+        document.getElementById("letterForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // 폼 제출 동작 취소
 
+            // 편지 제목과 내용 가져오기
+            var letterTitle = document.getElementById("letterTitle").value;
+            var letterContent = document.getElementById("letterContent").value;
 
+            // 편지 요소 생성
+            var letterElement = document.createElement("div");
+            letterElement.classList.add("letter");
+
+            // 편지 제목과 내용을 포함하는 HTML 생성
+            var letterHTML = '<h3 class="letter-title">' + letterTitle + '</h3><p class="letter-content">' + letterContent + '</p>';
+            letterElement.innerHTML = letterHTML;
+
+            // 편지 제목을 클릭했을 때 편지 내용을 토글 표시
+            var letterTitleElement = letterElement.querySelector('.letter-title');
+            letterTitleElement.addEventListener('click', function () {
+                var letterContentElement = this.nextElementSibling;
+                letterContentElement.style.display = (letterContentElement.style.display === 'none') ? 'block' : 'none';
+            });
+
+            // 편지 목록에 편지 추가
+            var letterList = document.getElementById("letterList");
+            letterList.appendChild(letterElement);
+
+            // 편지 제목과 내용 입력 필드 초기화
+            document.getElementById("letterTitle").value = "";
+            document.getElementById("letterContent").value = "";
+        });
+    </script>
+</body>
+</html>
