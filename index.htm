@@ -5,14 +5,25 @@
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <title>Coding</title>
     <style>
-        
+        #head {
+            border: 1px solid black;
+            height: 50px;
+        }
+
+        #head span {
+                color: white;
+            }
         body {
-            background-image: url('background_2.jpg');
+            background-image: url('background_3.jpg');
             background-repeat: no-repeat;
             background-size:cover;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+        }
+        #body contents{
+            display:grid;
+            grid-template-columns: 
         }
 
         #welcome {
@@ -22,14 +33,23 @@
             align-items: center;
             justify-content: center;
             height:100vh;
+            background-color: rgb(74, 74, 74, 0.61);
         }
 
     </style>
 </HEAD>
 <body>
-    <span></span>
+    <div id="head">
+        <span>제목</span>
+    </div>
+    <div id="body">
+        <div id="contents">
+
+        </div>
+
         <div id="welcome">
             Welcome
-        </div>
+            </div>
+     </div>
 </body>
 </HTML>
