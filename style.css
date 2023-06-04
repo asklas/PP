@@ -1,0 +1,46 @@
+
+#head {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#head div {
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: gray;
+}
+
+body {
+    background-image: url('background_3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#contents {
+    background-color: white;
+}
+
+#welcome {
+    color: white;
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(74, 74, 74, 0.61);
+}
+
